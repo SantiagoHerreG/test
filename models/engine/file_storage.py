@@ -4,6 +4,7 @@ instances to a JSON file and deserializes JSON file to instances"""
 import json
 from models.base_model import BaseModel
 from models.jurisdiction import Jurisdiction
+import os
 
 
 class FileStorage:
@@ -79,3 +80,8 @@ class FileStorage:
             if obj.name == name:
                 return obj
         return None
+
+    def reset(self):
+        """ Resets the database, SECURITY RISK ALLOWED """
+        os.remove('file.json')
+        storage.reload()
