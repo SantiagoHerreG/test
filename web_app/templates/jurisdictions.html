@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>JURISDICTIONS</TITLE>
+    </HEAD>
+    <BODY>
+        <TABLE>
+            <TR>
+                <TH><H1>Jurisdiction</H1></TH>
+                <TH><H1>Number of victims</H1></TH>
+            </TR>
+            {% for jur in jurisdictions.values()|sort(attribute='name') %}
+            <TR>
+                <TD>{{ jur.name }}</TD>
+                <TD><B>{{ jur.victims }}</B></TD>
+            </TR>
+            {% endfor %}
+        </TABLE>
+    </BODY>
+</HTML>
