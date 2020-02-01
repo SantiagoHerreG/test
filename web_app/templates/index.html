@@ -8,9 +8,15 @@
         <H1>Total victims: {{ n }}</H1><BR>
         <P>Counted to date: {{ time }} (UTC)</P>
         <FORM ACTION="/post_data" METHOD="post">
-            <P>Jurisdiction: </P><INPUT TYPE="text" NAME="name"><BR>
+            <P>Jurisdiction: </P><INPUT LIST="jurisdictions" NAME="name">
+            <DATALIST ID="jurisdictions">
+                {% for jur in jurisdictions %}
+                <OPTION VALUE={{ jur }}>
+                {% endfor %}
+            </DATALIST>
+            <BR>
             <P>Sick people: </P><INPUT TYPE="text" NAME="victims"><BR>
-            <INPUT TYPE="submit" VALUE="Submit">
+            <BR><INPUT TYPE="submit" VALUE="Submit">
         </FORM>
     </BODY>
 </HTML>

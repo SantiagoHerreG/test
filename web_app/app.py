@@ -6,6 +6,7 @@ from models import storage
 from models.jurisdiction import Jurisdiction
 import datetime
 from web_app.control_functions import is_valid_jurisdiction
+from web_app.control_functions import database_valid_names
 
 
 app = Flask(__name__)
@@ -40,7 +41,8 @@ def index_post():
 def index():
     """The index of the web page"""
     n = Jurisdiction.total()
-    return render_template("index.html", n=n, time=datetime.datetime.today())
+    return render_template("index.html", n=n, time=datetime.datetime.today(),
+                           jurisdictions=database_valid_names["Colombia"])
 
 
 @app.route('/jurisdictions', methods=["GET"], strict_slashes=False)
