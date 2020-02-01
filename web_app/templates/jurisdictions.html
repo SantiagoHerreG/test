@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <HTML lang="en">
     <HEAD>
+        <META CHARSET="UTF-8">
         <TITLE>JURISDICTIONS</TITLE>
     </HEAD>
     <BODY>
@@ -8,11 +9,13 @@
             <TR>
                 <TH><H1>Jurisdiction</H1></TH>
                 <TH><H1>Number of victims</H1></TH>
+                <TH><H1>Last update (UTC)</H1></TH>
             </TR>
             {% for jur in jurisdictions.values()|sort(attribute='name') %}
             <TR>
                 <TD>{{ jur.name }}</TD>
                 <TD><B>{{ jur.victims }}</B></TD>
+                <TD><B>{{ jur.updated_at }}</B></TD>
             </TR>
             {% endfor %}
         </TABLE>

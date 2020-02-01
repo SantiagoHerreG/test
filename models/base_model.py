@@ -4,11 +4,13 @@ import datetime
 import uuid
 import models
 
+
 class BaseModel:
     """ Model for the objects created
     """
     def __init__(self, *args, **kwargs):
-        """Constructor: each object has an id and creation and updation dates"""
+        """Constructor: each object has an id and creation and updation dates
+        """
         if not kwargs:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.datetime.now()
