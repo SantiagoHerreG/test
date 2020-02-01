@@ -47,8 +47,8 @@ def words_to_number(words):
     for number in numbers:
         idx = words.find(number)
         if idx > 0:
-            word = word[:idx] + "-" + word[idx:]
+            words = words[:idx] + "-" + words[idx:]
         try:
-            return w2n.word_to_num(word)
+            return w2n.word_to_num(words)
         except:
             return None
