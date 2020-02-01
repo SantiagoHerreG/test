@@ -5,5 +5,10 @@
     </HEAD>
     <BODY>
         <H1>Total victims: {{ n }}</H1>
+        <FORM ACTION="/post_data" METHOD="post" TARGET="_blank">
+            <P>Jurisdiction: </P><INPUT TYPE="text" NAME="jurisdiction"><BR>
+            <P>Sick people: </P><INPUT TYPE="text" NAME="number"><BR>
+            <INPUT TYPE="submit" VALUE="Submit">
+        </FORM>
     </BODY>
 </HTML>

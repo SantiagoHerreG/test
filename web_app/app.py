@@ -3,12 +3,20 @@
 starts a Flask web application
 """
 
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, abort, request
 from models import storage
 from models.jurisdiction import Jurisdiction
 
 
 app = Flask(__name__)
+
+
+
+@app.route('/post_data', methods=["POST"], strict_slashes=False)
+def index_post():
+    """Posted data handling"""
+    data = request.form
+    return data["jurisdiction"], 200
 
 
 @app.route('/', methods=["GET"], strict_slashes=False)
