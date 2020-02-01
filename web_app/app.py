@@ -7,6 +7,7 @@ from models.jurisdiction import Jurisdiction
 import datetime
 from web_app.control_functions import is_valid_jurisdiction
 from web_app.control_functions import database_valid_names
+from web_app.control_functions import words_to_number
 
 
 app = Flask(__name__)
