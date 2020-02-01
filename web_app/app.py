@@ -12,6 +12,24 @@ from web_app.control_functions import database_valid_names
 app = Flask(__name__)
 
 
+
+@app.route('/reset_data', methods=["GET"], strict_slashes=False)
+def reset_data():
+    """Asks for reseting the database"""
+    return render_template("reset_data.html")
+
+
+@app.route('/reset_answer', methods=["POST"], strict_slashes=False)
+def reset_answer():
+    """Resets the data"""
+    data = request.form
+    if data["answer"] == "YES":
+        storage.reset()
+        return "Database restarted", 200
+    
+    return "Database untouched", 200
+
+
 @app.route('/post_data', methods=["POST", "PUT"], strict_slashes=False)
 def index_post():
     """Posted data handling"""
