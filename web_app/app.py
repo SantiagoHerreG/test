@@ -12,7 +12,6 @@ from web_app.control_functions import database_valid_names
 app = Flask(__name__)
 
 
-
 @app.route('/reset_data', methods=["GET"], strict_slashes=False)
 def reset_data():
     """Asks for reseting the database"""
@@ -26,7 +25,7 @@ def reset_answer():
     if data["answer"] == "YES":
         storage.reset()
         return "Database restarted", 200
-    
+
     return "Database untouched", 200
 
 
@@ -35,15 +34,15 @@ def index_post():
     """Posted data handling"""
     data = request.form
     name = data["name"]
-    value = int(data["victims"])
+    value = data["victims"]
 
     if is_valid_jurisdiction(name, "Colombia") is False:
         return "Not a valid jurisdiction", 400
 
-    """    value = words_to_number(value)
+    value = words_to_number(value)
     if value is None:
         return "Not a valid number", 400
-    """
+
     jurisdiction = storage.get(Jurisdiction, name)
     if jurisdiction is None:
         new_jurisd = Jurisdiction(**{"name": name, "victims": value})
