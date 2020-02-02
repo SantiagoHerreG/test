@@ -30,6 +30,8 @@ def is_valid_jurisdiction(name, country):
         valid_names = database_valid_names[country]
         if name in valid_names:
             return True
+        else:
+            return False
     except:
         return False
 
