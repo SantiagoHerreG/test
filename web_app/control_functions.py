@@ -20,7 +20,7 @@ numbers = ["zero", "one", "two", "three", "four", "five", "six", "seven",
            "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen",
            "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty",
            "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety",
-           "hundred", "and", "thousand", "million"]
+           "hundred", "thousand", "million"]
 
 
 def is_valid_jurisdiction(name, country):
@@ -37,6 +37,7 @@ def is_valid_jurisdiction(name, country):
 def words_to_number(words):
     """Takes an string and converts it into integer, or None on error
     """
+    words = words.lower()
     try:
         words = words.strip()
         value = int(words)
@@ -45,10 +46,20 @@ def words_to_number(words):
         pass
 
     for number in numbers:
-        idx = words.find(number)
-        if idx > 0:
-            words = words[:idx] + "-" + words[idx:]
-        try:
-            return w2n.word_to_num(words)
-        except:
-            return None
+
+        i = 0
+        find_at = []
+        while i >= 0:
+            i = words.find(number, i + 1)
+            if i > 0:
+                find_at.append(i)
+
+        find_at.sort()
+        i = 0
+        for idx in find_at:
+            words = words[:idx + i] + " " + words[idx + i:]
+            i += 1
+    try:
+        return w2n.word_to_num(words)
+    except:
+        return None

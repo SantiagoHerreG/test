@@ -3,21 +3,29 @@
     <HEAD>
         <META CHARSET="UTF-8">
         <TITLE>JURISDICTIONS</TITLE>
+        <LINK REL="icon" TYPE="image/png" HREF="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Proposal_of_coat_of_arms_of_Colombia.svg/200px-Proposal_of_coat_of_arms_of_Colombia.svg.png">
     </HEAD>
     <BODY>
+    <HEADER>
+      <DIV><H1>All jurisdictions table</H1></DIV>
+    </HEADER>
         <TABLE>
             <TR>
-                <TH><H1>Jurisdiction</H1></TH>
-                <TH><H1>Number of victims</H1></TH>
-                <TH><H1>Last update (UTC)</H1></TH>
+                <TH><H3>Jurisdiction</H3></TH>
+                <TH><H3>Number of victims</H3></TH>
+                <TH><H3>Last update (UTC)</H3></TH>
             </TR>
             {% for jur in jurisdictions.values()|sort(attribute='name') %}
             <TR>
-                <TD>{{ jur.name }}</TD>
+                <TD><B>{{ jur.name }}</B></TD>
                 <TD><B>{{ jur.victims }}</B></TD>
                 <TD><B>{{ jur.updated_at }}</B></TD>
             </TR>
             {% endfor %}
         </TABLE>
     </BODY>
+    <FOOTER>
+        <A HREF="/"><P>Go to home</P></A>
+        <A HREF="/jurisdictions"><P>Reload page</P></A>
+    </FOOTER>
 </HTML>

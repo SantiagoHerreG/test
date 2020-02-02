@@ -3,20 +3,30 @@
     <HEAD>
         <META CHARSET="UTF-8">
         <TITLE>TUSAVIRUS</TITLE>
+        <LINK REL="icon" TYPE="image/png" HREF="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Proposal_of_coat_of_arms_of_Colombia.svg/200px-Proposal_of_coat_of_arms_of_Colombia.svg.png">
     </HEAD>
     <BODY>
-        <H1>Total victims: {{ n }}</H1><BR>
+    <HEADER>
+      <DIV><H1>Tusavirus outbreak platform</H1></DIV>
+    </HEADER>
+    <DIV>
+        <H2>Total victims: {{ n }}</H2><BR>
         <P>Counted to date: {{ time }} (UTC)</P>
-        <FORM ACTION="/post_data" METHOD="post">
+        <FORM ACTION="/post_data" METHOD="post" TARGET="_blank">
             <P>Jurisdiction: </P><INPUT LIST="jurisdictions" NAME="name">
             <DATALIST ID="jurisdictions">
                 {% for jur in jurisdictions %}
-                <OPTION VALUE={{ jur }}>
+                <OPTION VALUE="{{ jur }}">
                 {% endfor %}
             </DATALIST>
             <BR>
             <P>Sick people: </P><INPUT TYPE="text" NAME="victims"><BR>
             <BR><INPUT TYPE="submit" VALUE="Submit">
         </FORM>
+    </DIV>
+    <FOOTER>
+        <A HREF="/"><P>Reload page</P></A>
+        <A HREF="/jurisdictions"><P>Go to all jurisdictions table</P></A>
+    </FOOTER>
     </BODY>
 </HTML>

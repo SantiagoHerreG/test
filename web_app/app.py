@@ -50,6 +50,9 @@ def index_post():
         storage.save()
         return "New jurisdiction added succesfully", 201
     else:
+        if jurisdiction.victims > value:
+            return "Value entered is less than current number of victims in\
+ the {} jurisdiction".format(jurisdiction.name), 400
         jurisdiction.update(value)
         storage.save()
         return "Jurisdiction updated succesfully", 200

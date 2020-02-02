@@ -3,12 +3,20 @@
     <HEAD>
         <META CHARSET="UTF-8">
         <TITLE>TUSAVIRUS database resetting</TITLE>
+        <LINK REL="icon" TYPE="image/png" HREF="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Proposal_of_coat_of_arms_of_Colombia.svg/200px-Proposal_of_coat_of_arms_of_Colombia.svg.png">
     </HEAD>
+    <HEADER>
+      <DIV><H1>Restart database</H1></DIV>
+    </HEADER>
     <BODY>
         <P>Do you want to restart the database?<P>
-        <FORM ID="question" ACTION="/reset_answer" METHOD="post">
+        <FORM ID="question" ACTION="/reset_answer" METHOD="post" TARGET="_blank">
             <BR><INPUT TYPE="submit" NAME="answer" VALUE="YES" FORM="question">
             <BR><INPUT TYPE="submit" NAME="answer" VALUE="NO" FORM="question">
         </FORM>
+    <FOOTER>
+        <A HREF="/"><P>Go to home</P></A>
+        <A HREF="/"><P>Go to all jurisdictions table</P></A>
+    </FOOTER>
     </BODY>
 </HTML>
