@@ -83,7 +83,7 @@ class FileStorage:
 
     def reset(self):
         """ Resets the database, SECURITY RISK ALLOWED """
-        os.remove('file.json')
+        os.remove(FileStorage.__file_path)
         FileStorage.__objects = {}
         self.save()
         self.reload()

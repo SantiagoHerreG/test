@@ -49,7 +49,7 @@ class BaseModel:
             else:
                 self.updated_at = datetime.datetime.now()
 
-            models.storage.new(self)
+        models.storage.new(self)
 
     def __str__(self):
         """String representation of objects"""
