@@ -18,3 +18,7 @@ Choose a jurisdiction and updated the number of sick people. The platform recogn
 "one-hundred"
 "onehundred"
 "1 hundred"
+
+## Authors
+
+Santiago Herrera <santiago.herreragomez@gmail.com>
