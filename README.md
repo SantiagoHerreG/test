@@ -11,13 +11,13 @@ Available routes:
 
 ### How to use
 
-There is a Tusavirus Outbreak in the country. Governors from each jurisdictions were asked to report the number of victims.
-Choose a jurisdiction and updated the number of sick people. The platform recognises several number formats like:
+There is a Tusavirus Outbreak in the country. Governors from each jurisdiction were asked to report the number of victims.
+Choose a jurisdiction and update the number of sick people. The platform recognises several number formats like:
 "100"
 "one hundred"
 "one-hundred"
 "onehundred"
-"1 hundred"
+"1 hundred".
 
 ## Authors
 
