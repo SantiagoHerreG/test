@@ -19,6 +19,10 @@ Choose a jurisdiction and update the number of sick people. The platform recogni
 "onehundred"
 "1 hundred".
 
+### Testing
+
+Run `python3 -m unittest discover tests`
+
 ## Authors
 
 Santiago Herrera <santiago.herreragomez@gmail.com>
