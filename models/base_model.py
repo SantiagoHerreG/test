@@ -51,12 +51,6 @@ class BaseModel:
 
         models.storage.new(self)
 
-    def __str__(self):
-        """String representation of objects"""
-
-        return "[" + type(self).__name__\
-               + "] " + "(" + self.id + ") " + str(self.__dict__)
-
     def to_dict(self):
         """ This returns a dictionary representation of the objects for
         having JSON compatibility"""
